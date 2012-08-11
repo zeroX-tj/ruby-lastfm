@@ -6,6 +6,10 @@ class Lastfm
         result['releasedate'].lstrip! unless result['releasedate'].empty?
         result
       end
+      
+      regular_method :get_top_tags, [:artist, :album], [] do |response|
+        response.xml['toptags']['tag']
+      end
     end
   end
 end
