@@ -34,7 +34,7 @@ class Lastfm
       end
 
       regular_method :get_recent_tracks, [:user], [[:limit, nil], [:page, nil], [:to, nil], [:from, nil]] do |response|
-        response.xml['recenttracks']['track']
+        response.xml['recenttracks']
       end
 
       regular_method :get_top_albums, [:user], [[:period, nil], [:limit, nil], [:page, nil]] do |response|
