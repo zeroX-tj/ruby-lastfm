@@ -20,7 +20,11 @@ class Lastfm
       regular_method :get_top_tags, [:artist], [] do |response|
         response.xml['toptags']['tag']
       end
-
+      
+      regular_method :get_top_tracks, [:artist], [] do |response|
+        response.xml['toptracks']['track']
+      end
+      
       regular_method :search, [:artist], [[:limit, nil], [:page, nil]]
     end
   end
